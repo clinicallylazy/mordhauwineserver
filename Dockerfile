@@ -28,10 +28,10 @@ RUN mkdir $MordhauDIR
 RUN chown steam:steam $MordhauDIR -R
 
 EXPOSE ${QueryPort}/udp ${BeaconPort}/tcp ${Port}/udp
+USER steam
+
 VOLUME $MordhauDIR
 VOLUME $ConfigDIR 
 
-#USER steam
 ENTRYPOINT ${STEAMCMDDIR}/steamcmd.sh +@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir ${MordhauDIR} +app_update ${SteamID} +quit && wine ${MordhauDIR}/MordhauServer.exe -log -Port=${Port} -QueryPort=${QueryPort} -Beaconport=${BeaconPort} -GAMEINI=${ConfigDIR}/Game.ini -ENGINEINI=${ConfigDIR}/Engine.ini
-
 
