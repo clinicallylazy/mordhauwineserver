@@ -19,14 +19,19 @@ RUN apt-get update && apt-get install winehq-devel -y
 # install and start mordhau
 ENV SteamID 629800
 ENV MordhauDIR /mordhau
+ENV Port 7777
+ENV QueryPort 27015
+ENV BeaconPort 15000
+ENV ConfigDIR /config
 
 RUN mkdir $MordhauDIR
 RUN chown steam:steam $MordhauDIR -R
 
-EXPOSE 27015/udp 15000/tcp 7777/udp
-VOLUME $MordhauDIR 
+EXPOSE ${QueryPort}/udp ${BeaconPort}/tcp ${Port}/udp
+VOLUME $MordhauDIR
+VOLUME $ConfigDIR 
 
 #USER steam
-ENTRYPOINT ${STEAMCMDDIR}/steamcmd.sh +@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir ${MordhauDIR} +app_update ${SteamID} +quit && wine ${MordhauDIR}/MordhauServer.exe -log
+ENTRYPOINT ${STEAMCMDDIR}/steamcmd.sh +@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir ${MordhauDIR} +app_update ${SteamID} +quit && wine ${MordhauDIR}/MordhauServer.exe -log -Port=${Port} -QueryPort=${QueryPort} -Beaconport=${BeaconPort} -GAMEINI=${ConfigDIR}/Game.ini -ENGINEINI=${ConfigDIR}/Engine.ini
 
 
