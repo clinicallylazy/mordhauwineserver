@@ -1,6 +1,6 @@
 FROM cm2network/steamcmd
 
-LABEL maintainer="noeelmoeskops@Hotmail.com"
+LABEL maintainer="help@mordhau.com"
 USER root
 
 # add wine repo
