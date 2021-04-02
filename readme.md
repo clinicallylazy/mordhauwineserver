@@ -39,10 +39,10 @@ Every time the container starts it checks with steam if the installed Mordhau se
 version: '3.7'
 
 services:
-  mordhau-wine:
+  mordhauwineserver:
     restart: unless-stopped
     container_name: mordhau
-    image: noeel/mordhau-wine
+    image: clinicallylazy/mordhauwineserver
     volumes:
       - ./mordhau/server:/mordhau # optional, but nice
       - ./mordhau/config:/config
