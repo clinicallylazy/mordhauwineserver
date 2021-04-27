@@ -13,7 +13,9 @@ ENV ConfigDIR /config
 RUN mkdir $MordhauDIR
 RUN chown steam:steam $MordhauDIR -R
 
-EXPOSE ${RconPort}/udp ${BeaconPort}/tcp ${Port}/udp
+EXPOSE ${RconPort}/udp
+EXPOSE ${BeaconPort}/tcp 
+EXPOSE ${Port}/udp
 USER steam
 
 VOLUME $MordhauDIR
