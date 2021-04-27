@@ -25,14 +25,10 @@ Every time the container starts it checks with steam if the installed Mordhau se
 
 **Environments**
 - `Port`, change the default game port
-- `QueryPort`, change the default query port
+- `RconPort`, change the default Rcon port
 - `BeaconPort`, change the default beacon port
 
 ## Example
-
-**Docker run**
-
-`docker run -it -v ./mordhau/server:/mordhau:z -v ./mordhau/config:/config:z --name mordhau -p 7777:7777/udp -p 27015:27015/udp -p 15000:15000/udp --cap-add CAP_NET_ADMIN noeel/mordhau-wine`
 
 **Docker Compose**
 ```
@@ -73,5 +69,5 @@ services:
 10. Join your server and enjoy!
 
 ## Reference
-- [Github](https://github.com/NoeelMoeskops/Mordhau-Wine)
-- [Dockerhub](https://hub.docker.com/r/noeel/mordhau-wine)
+- [Github](https://github.com/clinicallylazy/mordhauwineserver)
+- [Dockerhub](https://hub.docker.com/r/clinicallylazy/mordhauwineserver)
