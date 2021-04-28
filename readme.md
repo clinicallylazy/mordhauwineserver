@@ -72,6 +72,7 @@ container=mordhau-wine; install_path=$(docker inspect $container | grep Merged |
 container=mordhau-wine; install_path=$(docker inspect $container | grep Merged | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Logs/Mordhau.log ./Mordhau.log
 ```
 **Note:** Ensure that the `container=mordhau-wine` section of the above matches the container name if you are renaming the container or deploying multiple instances. You can essentially find/replace everything from the instructions and just replace mordhau-wine with the preferred container name if you wish to do this.
+
 9. Update your Game.ini and Engine.ini files to your preferred settings. An example of an update you may want to do is increase the tick rate of your server in Engine.ini, for example adding these lines to the beginning of the config:
 ```
 [/Script/OnlineSubsystemUtils.IpNetDriver]
