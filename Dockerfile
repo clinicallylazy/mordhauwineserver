@@ -18,7 +18,4 @@ EXPOSE ${BeaconPort}/tcp
 EXPOSE ${Port}/udp
 USER steam
 
-VOLUME $MordhauDIR
-VOLUME $ConfigDIR 
-
 ENTRYPOINT steamcmd/steamcmd.sh +login anonymous +@sSteamCmdForcePlatformType windows +force_install_dir ~/mordhau +app_update 629800 validate +quit && WINEDEBUG=-all wine mordhau/MordhauServer.exe -log -Port=${Port} -RconPort=${RconPort} -BeaconPort=${BeaconPort}
