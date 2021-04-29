@@ -67,9 +67,9 @@ cd mordhau-wine
 7. Wait for steamCMD to download the Mordhau binary's and for the Mordhau server to generate `Game.ini` and `Engine.ini` files. Watch the container using `docker logs -f mordhau` Press Ctrl-C to exit log.
 8. Stop the docker container, symlink the most useful files into the local directory:
 ```
-container=mordhau-wine; install_path=$(docker inspect $container | grep Merged | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Config/WindowsServer/Game.ini ./Game.ini
-container=mordhau-wine; install_path=$(docker inspect $container | grep Merged | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Config/WindowsServer/Engine.ini ./Engine.ini
-container=mordhau-wine; install_path=$(docker inspect $container | grep Merged | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Logs/Mordhau.log ./Mordhau.log
+container=mordhau-wine; install_path=$(docker inspect $container | grep UpperDir | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Config/WindowsServer/Game.ini ./Game.ini
+container=mordhau-wine; install_path=$(docker inspect $container | grep UpperDir | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Config/WindowsServer/Engine.ini ./Engine.ini
+container=mordhau-wine; install_path=$(docker inspect $container | grep UpperDir | awk '{print $2}' | tr -d '",'); ln -s $install_path/home/steam/mordhau/Mordhau/Saved/Logs/Mordhau.log ./Mordhau.log
 ```
 **Note:** Ensure that the `container=mordhau-wine` section of the above matches the container name if you are renaming the container or deploying multiple instances. You can essentially find/replace everything from the instructions and just replace mordhau-wine with the preferred container name if you wish to do this.
 
