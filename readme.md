@@ -41,7 +41,6 @@ services:
       - "45002:45002/udp" #default: 15000
     tty: true
     environment:
-	# ensure that these ports match the ports above
       - Port=45000 #default: 7777
       - RconPort=45001 #default: 27015
       - BeaconPort=45002 #default: 15000
@@ -97,7 +96,6 @@ services:
       - "48125:48125/udp" #default: 15000
     tty: true
     environment:
-	# ensure that these ports match the ports above
       - Port=48123 #default: 7777
       - RconPort=48124 #default: 27015
       - BeaconPort=48125 #default: 15000
