@@ -37,7 +37,7 @@ services:
     image: clinicallylazy/mordhauwineserver:latest
     ports:
       - "45000:45000/udp" #default: 7777
-      - "45001:45001/udp" #default: 27015
+      - "45001:45001/tcp" #default: 27015
       - "45002:45002/udp" #default: 15000
     tty: true
     environment:
@@ -92,7 +92,7 @@ services:
     image: clinicallylazy/mordhauwineserver:latest
     ports:
       - "48123:48123/udp" #default: 7777
-      - "48124:48124/udp" #default: 27015
+      - "48124:48124/tcp" #default: 27015
       - "48125:48125/udp" #default: 15000
     tty: true
     environment:
