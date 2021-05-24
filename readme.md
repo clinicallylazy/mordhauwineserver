@@ -99,6 +99,8 @@ services:
       - Port=48123 #default: 7777
       - RconPort=48124 #default: 27015
       - BeaconPort=48125 #default: 15000
+      - MordhauDIR=/home/steam/mordhau
+
     cap_add:
       - CAP_NET_ADMIN
 ```
