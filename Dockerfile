@@ -4,7 +4,7 @@ LABEL maintainer="help@mordhau.com"
 
 USER root
 ENV SteamID 629800
-ENV MordhauDIR /mordhau
+ENV MordhauDIR /home/steam/mordhau
 ENV Port 7777
 ENV RconPort 27015
 ENV BeaconPort 15000
