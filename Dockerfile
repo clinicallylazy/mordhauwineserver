@@ -1,4 +1,5 @@
-FROM quay.io/dominator/mordhau-wine
+#FROM quay.io/dominator/mordhau-wine
+FROM github.com/webanck/docker-wine-steam
 
 LABEL maintainer="help@mordhau.com"
 
